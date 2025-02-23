@@ -12,7 +12,7 @@ samples_per_bandit = 1000
 epsilon = 0.1
 
 def select_action():
-    r = np.random.randn()
+    r = np.random.rand()
     if r < epsilon:
         action = np.random.randint(0,n_bandits)
     else:

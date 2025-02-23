@@ -57,10 +57,12 @@ for e in range(0, n_epsilons):
         # Q-value of each action (bandit) - start with random
         q_estimates = np.random.randn(k_bandits)
 
+        ### Each action corresponds to one bandit (slot machine). The goal is to figure out which bandit leads to the highest actions. Over a few steps, the agent figures out the mean reward from each bandit and chooses the action with the highest reward.
+
         # Total reward from each action (bandit) - start with zeros
         action_rewards = np.zeros(k_bandits) 
 
-        # number of times each action has been taken so far - start with zeros
+        # number of times each action has been taken so far - start with zeros. This is used to compute the mean reward (q-value) from action a
         n_action = np.zeros(k_bandits) 
 
         # reward from each step - start from 0 
